@@ -1,0 +1,7 @@
+{
+  "Watcher_RedBlueNerf_ScryMantraBuff:Adaptation": {
+    "NAME": "顺应变化",
+    "DESCRIPTION": "每当你进入一个姿态时，抽 1 张牌。 NL 打出时：退出当前姿态，进入平静。",
+    "UPGRADE_DESCRIPTION": "每当你进入一个姿态时，抽 1 张牌。 NL 打出时：退出当前姿态，进入平静。"
+  }
+}

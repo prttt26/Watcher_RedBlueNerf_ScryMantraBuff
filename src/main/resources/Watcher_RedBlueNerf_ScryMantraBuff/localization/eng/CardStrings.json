@@ -1,0 +1,7 @@
+{
+  "Watcher_RedBlueNerf_ScryMantraBuff:Adaptation": {
+    "NAME": "Adaptation",
+    "DESCRIPTION": "Whenever you enter a Stance, draw 1 card. NL On play: exit your current Stance and enter Calm.",
+    "UPGRADE_DESCRIPTION": "Whenever you enter a Stance, draw 1 card. NL On play: exit your current Stance and enter Calm."
+  }
+}

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.prttt</groupId>
+    <artifactId>Watcher_RedBlueNerf_ScryMantraBuff</artifactId>
+    <version>0.1.0</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- 换机器只改这两行（本机路径，见 sts1-build-environment）-->
+        <sts.home>C:/Program Files (x86)/Steam/steamapps/common/SlayTheSpire</sts.home>
+        <workshop>C:/Program Files (x86)/Steam/steamapps/workshop/content/646570</workshop>
+        <mts.dir>${workshop}/1605060445</mts.dir>
+        <basemod.dir>${workshop}/1605833019</basemod.dir>
+        <stslib.dir>${workshop}/1609158507</stslib.dir>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.megacrit</groupId><artifactId>desktop</artifactId><version>1.0</version>
+            <scope>system</scope><systemPath>${sts.home}/desktop-1.0.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>com.evacipated.cardcrawl</groupId><artifactId>ModTheSpire</artifactId><version>0</version>
+            <scope>system</scope><systemPath>${mts.dir}/ModTheSpire.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>basemod</groupId><artifactId>BaseMod</artifactId><version>0</version>
+            <scope>system</scope><systemPath>${basemod.dir}/BaseMod.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>stslib</groupId><artifactId>StSLib</artifactId><version>0</version>
+            <scope>system</scope><systemPath>${stslib.dir}/StSLib.jar</systemPath>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>Watcher_RedBlueNerf_ScryMantraBuff</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>copy-to-mods</id>
+                        <phase>package</phase>
+                        <goals><goal>run</goal></goals>
+                        <configuration>
+                            <target>
+                                <mkdir dir="${sts.home}/mods"/>
+                                <copy file="${project.build.directory}/${project.build.finalName}.jar"
+                                      todir="${sts.home}/mods" overwrite="true"/>
+                                <echo message="Copied ${project.build.finalName}.jar -> ${sts.home}/mods"/>
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

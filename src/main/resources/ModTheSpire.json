@@ -1,0 +1,8 @@
+{
+  "modid": "Watcher_RedBlueNerf_ScryMantraBuff",
+  "name": "Watcher: Red/Blue Nerf, Scry/Mantra Buff",
+  "author_list": ["prttt26"],
+  "description": "削弱观者红蓝（愤怒/平静姿态）无限，增强预见与真言/神格。",
+  "version": "0.1.0",
+  "dependencies": ["basemod", "stslib"]
+}
